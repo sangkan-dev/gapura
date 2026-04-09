@@ -6,17 +6,16 @@ This guide installs **`gapura-sentinel`** on a Linux SSH host and configures Ope
 
 - Linux host running OpenSSH (`sshd`)
 - Outbound HTTPS to your EVM RPC endpoint
-- `gapura-sentinel` binary built on the host or copied over
+- `curl`, `jq`, `sha256sum` (untuk install dari GitHub Release)
 
 ## Quick install (script)
 
-From the repo root on the target host:
+### Install dari GitHub Release (default)
 
 ```bash
-cd gapura
-cd sentinel && cargo build --release
-
-./scripts/install.sh
+curl -fsSL https://raw.githubusercontent.com/sangkan-dev/gapura/main/scripts/install.sh -o install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 The script:
@@ -26,6 +25,18 @@ The script:
 - writes `/etc/gapura/sentinel.toml` and `/etc/gapura/users.toml` templates
 - writes `/etc/ssh/sshd_config.d/99-gapura.conf`
 - runs `sshd -t`
+
+### Install dari source (alternatif)
+
+Jika kamu tidak ingin download artifact, kamu bisa build dari source:
+
+```bash
+git clone https://github.com/sangkan-dev/gapura.git
+cd gapura
+cd sentinel && cargo build --release
+cd ..
+SENTINEL_BIN=./sentinel/target/release/gapura-sentinel ./scripts/install.sh
+```
 
 ## Configure
 

@@ -54,7 +54,15 @@ Contoh pakai:
 
 ### Sentinel (host) — `gapura-sentinel`
 
-Build:
+Install (recommended, from GitHub Release):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/sangkan-dev/gapura/main/scripts/install.sh -o install.sh
+chmod +x install.sh
+./install.sh
+```
+
+Build from source (alternative):
 
 ```bash
 cd sentinel
