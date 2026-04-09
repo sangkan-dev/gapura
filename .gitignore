@@ -1,0 +1,26 @@
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+
+# Env / secrets
+.env
+**/.env
+*.env
+!.env.example
+
+# Rust
+target/
+**/target/
+Cargo.lock.bak
+*.rs.bk
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# Logs
+*.log
