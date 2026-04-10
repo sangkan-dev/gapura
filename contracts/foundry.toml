@@ -4,7 +4,7 @@ out = "out"
 libs = ["lib"]
 
 [rpc_endpoints]
-base_sepolia = "https://base-sepolia.g.alchemy.com"   # ganti dengan private RPC nanti
+base_sepolia = "https://sepolia.base.org"   # ganti dengan private RPC nanti
 
 [etherscan]
 base_sepolia = { key = "${BASESCAN_API_KEY}" }  
